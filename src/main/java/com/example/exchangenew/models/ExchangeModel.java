@@ -3,6 +3,9 @@ package com.example.exchangenew.models;
 import com.example.exchangenew.jsonoperate.GetJsonOperate;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class ExchangeModel {
 
@@ -47,11 +50,20 @@ public class ExchangeModel {
 
     public double exchangeResults() throws IOException {
         double results = 0;
+        double exchangeRate=0;
 
         GetJsonOperate getJsonOperate = new GetJsonOperate();
         getJsonOperate.getJsonData();
 
+
         results = this.valueOfCurrency * getJsonOperate.getExchangeRateFromJson();
+
+        this.exchangeRate=getJsonOperate.getExchangeRateFromJson();
+
+        BigDecimal bd = new BigDecimal(results).setScale(2, RoundingMode.HALF_UP);
+        double twoDecimalPlaces = bd.doubleValue();
+
+        results = twoDecimalPlaces;
 
         return results;
     }

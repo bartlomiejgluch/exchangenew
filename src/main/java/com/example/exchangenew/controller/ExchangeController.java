@@ -34,9 +34,11 @@ public class ExchangeController {
         ExchangeModel exchangeModel = new ExchangeModel(valueOfCurrencyNumber);
 
         double result = exchangeModel.exchangeResults();
+double exchangeRate = exchangeModel.getExchangeRate();
 
         model.addAttribute("valueOfCurrency", valueOfCurrency);
         model.addAttribute("result", result);
+        model.addAttribute("exchangeRate", exchangeRate);
         model.addAttribute("view", "views/exchangeform");
 
         return "base-layout";

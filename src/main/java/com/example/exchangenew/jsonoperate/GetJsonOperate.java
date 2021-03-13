@@ -44,7 +44,6 @@ public class GetJsonOperate {
 
         JsonParser jp = new JsonParser();
         JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-        System.out.println(root.toString());
 
         Gson gson = new Gson();
 

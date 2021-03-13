@@ -1,30 +1,33 @@
+<form th:action="@{/}" method="POST" xmlns:th="http://www.w3.org/1999/xhtml">
 
-<div class="form">
+    <div class="container">
 
-<form class="form-group" th:action="@{/}" method="POST" xmlns:th="http://www.w3.org/1999/xhtml">
+        <div class="row">
+            <p>
+
+                <label for="valueOfCurrency">Amount GBP:</label><br>
+                <input type="number" step="0.01" class="col-6" min="0" max="900719925474099" id="valueOfCurrency"
+                       placeholder="GBP"
+                       name="valueOfCurrency" th:value="${valueOfCurrency}"/>
+            </p>
+
+            <p>
+                <label for="result">To PLN:</label><br>
+                <input type="text" class="col-6" id="result" placeholder="Result"
+                       name="result" th:value="${result}"/>
+            </p>
+
+            <p>
+                <button type="submit" class="btn btn-primary mb-3">Exchange</button>
+            </p>
 
 
-
-    <div class="form-group">
-
-    <input type="number" class="input-group" min="1" max="900719925474099" id="valueOfCurrency" placeholder="GBP"
-           name="valueOfCurrency" th:value="${valueOfCurrency}"/>
-
-    </div>
-
-
-
-    <div class="form-group">
-    <input type="text" class="input-group" id="result" placeholder="Result"
-           name="result" th:value="${result}"/>
-    </div>
-
-
-
-        <div class="form-select-button">
-    <button type="submit" class="btn btn-primary">Exchange</button>
+            <p>
+                <label for="exchangeRate"> GBP exchange rate:</label><br>
+                <input type="text" class="col-6" id="exchangeRate" placeholder="Exchange Rate"
+                       name="result" th:value="${exchangeRate}"/>
+            </p>
         </div>
-
+    </div>
 </form>
 
-</div>

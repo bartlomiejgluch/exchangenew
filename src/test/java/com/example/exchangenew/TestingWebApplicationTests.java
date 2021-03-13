@@ -1,13 +1,14 @@
 package com.example.exchangenew;
 
 import org.junit.jupiter.api.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ExchangenewApplicationTests {
+public class TestingWebApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+    }
 
 }
